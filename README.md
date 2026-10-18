@@ -8,7 +8,7 @@ en lenguaje natural y con bitácora de auditoría.
 > La decisión final la fija código determinista y, ante cualquier duda o fallo, el resultado
 > es **escalar**.
 
-Construido para el Hackatón 30X (Andrés Bilbao), Colombia.
+Construido para el Hackatón 30X, Colombia.
 
 ---
 
