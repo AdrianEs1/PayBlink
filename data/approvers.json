@@ -1,0 +1,20 @@
+[
+  {
+    "id": "apr-marta",
+    "nombre": "Marta Rincón",
+    "cargo": "Gerente Financiera",
+    "telefono": "+57 300 000 0001",
+    "email": "marta.finanzas@empresa-ficticia.co",
+    "canalPreferido": "whatsapp",
+    "montoMaximo": 12000000
+  },
+  {
+    "id": "apr-carlos",
+    "nombre": "Carlos Peña",
+    "cargo": "Director de Finanzas",
+    "telefono": "+57 300 000 0002",
+    "email": "carlos.finanzas@empresa-ficticia.co",
+    "canalPreferido": "email",
+    "montoMaximo": null
+  }
+]

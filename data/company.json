@@ -1,0 +1,16 @@
+{
+  "nombre": "Distribuciones Andinas S.A.S.",
+  "nit": "900.412.778-3",
+  "monedaBase": "COP",
+  "periodo": {
+    "tipo": "mensual",
+    "fechaReferencia": "2026-10-16"
+  },
+  "presupuestoPeriodo": 45000000,
+  "tasas": {
+    "COP": 1,
+    "USD": 4050,
+    "EUR": 4400
+  },
+  "responsable": "Marta Rincón, Gerente Financiera"
+}

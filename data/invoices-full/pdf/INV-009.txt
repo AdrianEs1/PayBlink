@@ -1,0 +1,12 @@
+FACTURA DE VENTA ELECTRONICA
+Seguros del Pacífico S.A.
+NIT 860.009.334-1
+
+Fecha de emision: 2026-10-08
+Beneficiario: Seguros del Pacífico S.A.
+Referencia: OC-2026-0459
+Monto: EUR 350,00
+Fecha de vencimiento: 2026-11-05
+Concepto: Prima de póliza de transporte internacional
+
+Observaciones: póliza vigente desde el 1 de octubre de 2026.

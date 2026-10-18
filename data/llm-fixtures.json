@@ -1,0 +1,395 @@
+{
+  "_comentario": [
+    "Respuestas simuladas del LLM por factura (RF-9.3: la evaluacion y la demo no dependen de la API).",
+    "Se usan cuando LLM_MODE=auto sin GEMINI_API_KEY, LLM_MODE=fixture o LLM_MODE=cache sin entrada en disco.",
+    "Si falta 'propuesta', el agente simulado propone 'pagar' (el modelo mas laxo posible):",
+    "asi se ve que el guard endurece la decision usando el motor de reglas.",
+    "Cada entrada imita lo que devolveria Gemini con responseSchema."
+  ],
+  "INV-001": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 2450000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-25",
+      "referencia": "OC-2026-0451",
+      "concepto": "Tornillería y herramienta menor para bodega",
+      "confianza": 0.97
+    }
+  },
+  "INV-002": {
+    "extraccion": {
+      "beneficiario": "Transportes La Ruta Segura S.A.S.",
+      "monto": 1800000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-24",
+      "referencia": "OC-2026-0452",
+      "concepto": "Flete Bogotá - Medellín, 3 viajes",
+      "confianza": 0.95
+    }
+  },
+  "INV-003": {
+    "extraccion": {
+      "beneficiario": "Papelería y Oficina Central S.A.S.",
+      "monto": 950000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-23",
+      "referencia": "OC-2026-0453",
+      "concepto": "Papelería y consumibles de oficina",
+      "confianza": 0.96
+    }
+  },
+  "INV-004": {
+    "extraccion": {
+      "beneficiario": "Servicios Eléctricos Andinos S.A.S.",
+      "monto": 13500000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-28",
+      "referencia": "OC-2026-0454",
+      "concepto": "Mantenimiento eléctrico de bodega central",
+      "confianza": 0.94
+    }
+  },
+  "INV-005": {
+    "extraccion": {
+      "beneficiario": "Suministros Industriales del Norte Ltda",
+      "monto": 16800000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-27",
+      "referencia": "OC-2026-0455",
+      "concepto": "Suministro de estantería industrial",
+      "confianza": 0.95
+    }
+  },
+  "INV-006": {
+    "extraccion": {
+      "beneficiario": "Aseo Total Bogotá Ltda",
+      "monto": 780000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-26",
+      "referencia": "OC-2026-0456",
+      "concepto": "Servicio de aseo de oficinas, octubre",
+      "confianza": 0.96
+    }
+  },
+  "INV-007": {
+    "extraccion": {
+      "beneficiario": "Cafetería y Catering La Esquina",
+      "monto": 620000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-22",
+      "referencia": "OC-2026-0457",
+      "concepto": "Catering para capacitación de personal",
+      "confianza": 0.93
+    }
+  },
+  "INV-008": {
+    "extraccion": {
+      "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+      "monto": 900,
+      "moneda": "USD",
+      "fechaVencimiento": "2026-10-30",
+      "referencia": "OC-2026-0458",
+      "concepto": "Licencias de monitoreo de red (anual)",
+      "confianza": 0.95
+    }
+  },
+  "INV-009": {
+    "extraccion": {
+      "beneficiario": "Seguros del Pacífico S.A.",
+      "monto": 350,
+      "moneda": "EUR",
+      "fechaVencimiento": "2026-11-05",
+      "referencia": "OC-2026-0459",
+      "concepto": "Prima de póliza de transporte internacional",
+      "confianza": 0.94
+    }
+  },
+  "INV-010": {
+    "extraccion": {
+      "beneficiario": "Mantenimiento Industrial Pro S.A.S.",
+      "monto": 2100000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-29",
+      "referencia": "OC-2026-0460",
+      "concepto": "Mantenimiento preventivo de montacargas",
+      "confianza": 0.96
+    }
+  },
+  "INV-011": {
+    "extraccion": {
+      "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+      "monto": 1500,
+      "moneda": "USD",
+      "fechaVencimiento": "2026-11-02",
+      "referencia": "OC-2026-0461",
+      "concepto": "Servicios de ciberseguridad gestionada",
+      "confianza": 0.95
+    }
+  },
+  "INV-012": {
+    "extraccion": {
+      "beneficiario": "Suministros Industriales del Norte Ltda",
+      "monto": 5400000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-11-03",
+      "referencia": "OC-2026-0462",
+      "concepto": "Repuestos de banda transportadora",
+      "confianza": 0.95
+    }
+  },
+  "INV-013": {
+    "extraccion": {
+      "beneficiario": "Papelería y Oficina Central S.A.S.",
+      "monto": 1250000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-31",
+      "referencia": "OC-2026-0463",
+      "concepto": "Impresión de material corporativo",
+      "confianza": 0.96
+    }
+  },
+  "INV-014": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 4850000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-11-04",
+      "referencia": "OC-2026-0464",
+      "concepto": "Reposición de herramienta de bodega",
+      "confianza": 0.97
+    }
+  },
+  "INV-015": {
+    "extraccion": {
+      "beneficiario": "Mantenimiento Industrial Pro S.A.S.",
+      "monto": 1950000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-28",
+      "referencia": "OC-2026-0465",
+      "concepto": "Ajuste de linea de empaque",
+      "confianza": 0.94
+    }
+  },
+  "INV-016": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 7000000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-11-07",
+      "referencia": "OC-2026-0467",
+      "concepto": "Lote de perfileria metálica",
+      "confianza": 0.95
+    }
+  },
+  "INV-017": {
+    "extraccion": {
+      "beneficiario": "Servicios Eléctricos Andinos S.A.S.",
+      "monto": 11900000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-11-08",
+      "referencia": "OC-2026-0468",
+      "concepto": "Ampliación de red eléctrica de bodega 2",
+      "confianza": 0.95
+    }
+  },
+  "INV-018": {
+    "extraccion": {
+      "beneficiario": "Muebles y Enseres del Caribe S.A.S.",
+      "monto": 1250000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-27",
+      "referencia": "OC-2026-0469",
+      "concepto": "Mobiliario para sala de juntas",
+      "confianza": 0.92
+    },
+    "propuesta": {
+      "decision": "escalar",
+      "razones": [
+        "El beneficiario no aparece en la lista de proveedores autorizados de la empresa."
+      ]
+    }
+  },
+  "INV-019": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 1600000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-30",
+      "referencia": "OC-2026-0470",
+      "concepto": "Suministro de guantes y EPP",
+      "confianza": 0.93
+    },
+    "propuesta": {
+      "decision": "escalar",
+      "razones": [
+        "El monto facturado no coincide con el valor acordado en la orden de compra."
+      ]
+    }
+  },
+  "INV-020": {
+    "extraccion": {
+      "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+      "monto": 1200,
+      "moneda": "USD",
+      "fechaVencimiento": "2026-11-03",
+      "referencia": "OC-2026-0471",
+      "concepto": "Soporte de infraestructura de red",
+      "confianza": 0.93
+    }
+  },
+  "INV-021": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 4850000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-11-10",
+      "referencia": "OC-2026-0464",
+      "concepto": "Reposición de herramienta de bodega",
+      "confianza": 0.98
+    }
+  },
+  "INV-022": {
+    "extraccion": {
+      "beneficiario": "Cafetería y Catering La Esquina",
+      "monto": 620000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-29",
+      "referencia": "OC-2026-0457B",
+      "concepto": "Catering para capacitación de personal",
+      "confianza": 0.91
+    }
+  },
+  "INV-023": {
+    "extraccion": {
+      "beneficiario": "Transportes La Ruta Segura S.A.S.",
+      "monto": null,
+      "moneda": null,
+      "fechaVencimiento": "2026-10-27",
+      "referencia": "OC-2026-0472",
+      "concepto": "Fletes varios de la semana",
+      "confianza": 0.55
+    }
+  },
+  "INV-024": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 1300000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-29",
+      "referencia": "OC-2026-0473",
+      "concepto": "Suministro de discos de corte",
+      "confianza": 0.78
+    }
+  },
+  "INV-025": {
+    "extraccion": {
+      "beneficiario": "Transportes La Ruta Segura S.A.S.",
+      "monto": 48500,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-26",
+      "referencia": "OC-2026-0474",
+      "concepto": "Flete urbano, semana 42",
+      "confianza": 0.74
+    }
+  },
+  "INV-026": {
+    "extraccion": {
+      "beneficiario": "Aseo Total Bogotá Ltda",
+      "monto": 890000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-29",
+      "referencia": "OC-2026-0475",
+      "concepto": "Aseo adicional de bodega",
+      "confianza": 0.96
+    }
+  },
+  "INV-027": {
+    "extraccion": {
+      "beneficiario": "Mantenimiento Industrial Pro S.A.S.",
+      "monto": null,
+      "moneda": null,
+      "fechaVencimiento": null,
+      "referencia": "OC-2026-0476",
+      "concepto": "Ajuste de linea de empaque",
+      "confianza": 0.41
+    }
+  },
+  "INV-028": {
+    "extraccion": {
+      "beneficiario": "Ferretería El Tornillo S.A.S.",
+      "monto": 1100000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-08-20",
+      "referencia": "OC-2026-0477",
+      "concepto": "Suministro de sellantes industriales",
+      "confianza": 0.93
+    }
+  },
+  "INV-029": {
+    "extraccion": {
+      "beneficiario": "Papelería y Oficina Central S.A.S.",
+      "monto": 400000,
+      "moneda": "COP",
+      "fechaVencimiento": "2028-05-10",
+      "referencia": "OC-2026-0478",
+      "concepto": "Agenda corporativa 2028",
+      "confianza": 0.92
+    }
+  },
+  "INV-030": {
+    "extraccion": {
+      "beneficiario": "Cafetería y Catering La Esquina",
+      "monto": 450000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-31",
+      "referencia": "OC-2026-0479",
+      "concepto": "Refrigerios reunion de area",
+      "confianza": 0.94
+    }
+  },
+  "SIM-001": {
+    "extraccion": {
+      "beneficiario": "Suministros Industriales del Norte Ltda",
+      "monto": 1680000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-30",
+      "referencia": "OC-2026-0455",
+      "concepto": "Suministro de estantería industrial",
+      "confianza": 0.97
+    }
+  },
+  "SIM-002": {
+    "extraccion": {
+      "beneficiario": "Papelería y Oficina Central S.A.S.",
+      "monto": 950000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-28",
+      "referencia": "OC-2026-0453",
+      "concepto": "Papelería y consumibles de oficina",
+      "confianza": 0.96
+    }
+  },
+  "SIM-003": {
+    "extraccion": {
+      "beneficiario": "Consultores Fantasma S.A.S.",
+      "monto": 3200000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-27",
+      "referencia": "CUENTA-778",
+      "concepto": "Asesoría estratégica",
+      "confianza": 0.93
+    }
+  },
+  "SIM-004": {
+    "extraccion": {
+      "beneficiario": "Transportes La Ruta Segura S.A.S.",
+      "monto": 13500000,
+      "moneda": "COP",
+      "fechaVencimiento": "2026-10-26",
+      "referencia": "OC-2026-0452",
+      "concepto": "Flete especial Bogotá - Medellín",
+      "confianza": 0.95
+    }
+  }
+}

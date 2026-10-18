@@ -1,0 +1,132 @@
+{
+  "total": 10,
+  "correctas": 10,
+  "autonomia": 100,
+  "seguridad": 0,
+  "explicabilidad": 100,
+  "descripcionOk": 100,
+  "pagosIndebidos": [],
+  "casos": [
+    {
+      "id": "INV-001",
+      "esperado": "pagar",
+      "obtenido": "pagar",
+      "estado": "pagado",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": []
+    },
+    {
+      "id": "INV-004",
+      "esperado": "escalar",
+      "obtenido": "escalar",
+      "estado": "pendiente_aprobacion",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R7"
+      ]
+    },
+    {
+      "id": "INV-007",
+      "esperado": "pagar",
+      "obtenido": "pagar",
+      "estado": "pagado",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": []
+    },
+    {
+      "id": "INV-014",
+      "esperado": "pagar",
+      "obtenido": "pagar",
+      "estado": "pagado",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": []
+    },
+    {
+      "id": "INV-018",
+      "esperado": "escalar",
+      "obtenido": "escalar",
+      "estado": "pendiente_aprobacion",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R2"
+      ]
+    },
+    {
+      "id": "INV-019",
+      "esperado": "escalar",
+      "obtenido": "escalar",
+      "estado": "pendiente_aprobacion",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R6"
+      ]
+    },
+    {
+      "id": "INV-021",
+      "esperado": "frenar",
+      "obtenido": "frenar",
+      "estado": "frenado",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R1"
+      ]
+    },
+    {
+      "id": "INV-022",
+      "esperado": "escalar",
+      "obtenido": "escalar",
+      "estado": "pendiente_aprobacion",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R1"
+      ]
+    },
+    {
+      "id": "INV-026",
+      "esperado": "pagar",
+      "obtenido": "pagar",
+      "estado": "pagado",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": []
+    },
+    {
+      "id": "INV-027",
+      "esperado": "escalar",
+      "obtenido": "escalar",
+      "estado": "pendiente_aprobacion",
+      "correcto": true,
+      "explicacionOk": true,
+      "descripcionOk": true,
+      "reglasClave": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ]
+    }
+  ],
+  "generadoEn": "2026-10-17T15:52:09.328Z",
+  "modoLlm": "Simulado (fixtures locales, sin red)"
+}

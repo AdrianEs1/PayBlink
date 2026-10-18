@@ -1,0 +1,26 @@
+node_modules/
+dist/
+build/
+coverage/
+
+# Agente de codigo
+.freebuff
+
+# Base de datos local (se regenera con `npm run seed`)
+*.sqlite
+*.sqlite-journal
+*.db
+
+# Cache de respuestas del LLM (se regenera con `npm run eval`)
+eval/cache/
+
+# Entorno
+.env
+.env.local
+.env.*.local
+.env_test
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log

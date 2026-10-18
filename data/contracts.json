@@ -1,0 +1,154 @@
+[
+  {
+    "referencia": "OC-2026-0451",
+    "beneficiario": "Ferretería El Tornillo S.A.S.",
+    "montoAcordado": 2450000,
+    "moneda": "COP",
+    "concepto": "Tornillería y herramienta menor para bodega",
+    "fecha": "2026-10-02"
+  },
+  {
+    "referencia": "OC-2026-0452",
+    "beneficiario": "Transportes La Ruta Segura S.A.S.",
+    "montoAcordado": 1800000,
+    "moneda": "COP",
+    "concepto": "Flete Bogotá - Medellín, 3 viajes",
+    "fecha": "2026-10-03"
+  },
+  {
+    "referencia": "OC-2026-0453",
+    "beneficiario": "Papelería y Oficina Central S.A.S.",
+    "montoAcordado": 950000,
+    "moneda": "COP",
+    "concepto": "Papelería y consumibles de oficina",
+    "fecha": "2026-10-03"
+  },
+  {
+    "referencia": "OC-2026-0454",
+    "beneficiario": "Servicios Eléctricos Andinos S.A.S.",
+    "montoAcordado": 13500000,
+    "moneda": "COP",
+    "concepto": "Mantenimiento eléctrico de bodega central",
+    "fecha": "2026-10-05"
+  },
+  {
+    "referencia": "OC-2026-0455",
+    "beneficiario": "Suministros Industriales del Norte Ltda",
+    "montoAcordado": 16800000,
+    "moneda": "COP",
+    "concepto": "Suministro de estantería industrial",
+    "fecha": "2026-10-05"
+  },
+  {
+    "referencia": "OC-2026-0456",
+    "beneficiario": "Aseo Total Bogotá Ltda",
+    "montoAcordado": 780000,
+    "moneda": "COP",
+    "concepto": "Servicio de aseo de oficinas, octubre",
+    "fecha": "2026-10-06"
+  },
+  {
+    "referencia": "OC-2026-0457",
+    "beneficiario": "Cafetería y Catering La Esquina",
+    "montoAcordado": 620000,
+    "moneda": "COP",
+    "concepto": "Catering para capacitación de personal",
+    "fecha": "2026-10-06"
+  },
+  {
+    "referencia": "OC-2026-0458",
+    "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+    "montoAcordado": 900,
+    "moneda": "USD",
+    "concepto": "Licencias de monitoreo de red (anual)",
+    "fecha": "2026-10-07"
+  },
+  {
+    "referencia": "OC-2026-0459",
+    "beneficiario": "Seguros del Pacífico S.A.",
+    "montoAcordado": 350,
+    "moneda": "EUR",
+    "concepto": "Prima de póliza de transporte internacional",
+    "fecha": "2026-10-07"
+  },
+  {
+    "referencia": "OC-2026-0460",
+    "beneficiario": "Mantenimiento Industrial Pro S.A.S.",
+    "montoAcordado": 2100000,
+    "moneda": "COP",
+    "concepto": "Mantenimiento preventivo de montacargas",
+    "fecha": "2026-10-08"
+  },
+  {
+    "referencia": "OC-2026-0461",
+    "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+    "montoAcordado": 1500,
+    "moneda": "USD",
+    "concepto": "Servicios de ciberseguridad gestionada",
+    "fecha": "2026-10-08"
+  },
+  {
+    "referencia": "OC-2026-0462",
+    "beneficiario": "Suministros Industriales del Norte Ltda",
+    "montoAcordado": 5400000,
+    "moneda": "COP",
+    "concepto": "Repuestos de banda transportadora",
+    "fecha": "2026-10-09"
+  },
+  {
+    "referencia": "OC-2026-0463",
+    "beneficiario": "Papelería y Oficina Central S.A.S.",
+    "montoAcordado": 1250000,
+    "moneda": "COP",
+    "concepto": "Impresión de material corporativo",
+    "fecha": "2026-10-09"
+  },
+  {
+    "referencia": "OC-2026-0464",
+    "beneficiario": "Ferretería El Tornillo S.A.S.",
+    "montoAcordado": 4850000,
+    "moneda": "COP",
+    "concepto": "Reposición de herramienta de bodega",
+    "fecha": "2026-10-10"
+  },
+  {
+    "referencia": "OC-2026-0465",
+    "beneficiario": "Mantenimiento Industrial Pro S.A.S.",
+    "montoAcordado": 1950000,
+    "moneda": "COP",
+    "concepto": "Ajuste de línea de empaque",
+    "fecha": "2026-10-10"
+  },
+  {
+    "referencia": "OC-2026-0467",
+    "beneficiario": "Ferretería El Tornillo S.A.S.",
+    "montoAcordado": 7000000,
+    "moneda": "COP",
+    "concepto": "Lote de perfileria metálica",
+    "fecha": "2026-10-11"
+  },
+  {
+    "referencia": "OC-2026-0468",
+    "beneficiario": "Servicios Eléctricos Andinos S.A.S.",
+    "montoAcordado": 11900000,
+    "moneda": "COP",
+    "concepto": "Ampliación de red eléctrica de bodega 2",
+    "fecha": "2026-10-11"
+  },
+  {
+    "referencia": "OC-2026-0470",
+    "beneficiario": "Ferretería El Tornillo S.A.S.",
+    "montoAcordado": 2300000,
+    "moneda": "COP",
+    "concepto": "Suministro de guantes y EPP",
+    "fecha": "2026-10-12"
+  },
+  {
+    "referencia": "OC-2026-0471",
+    "beneficiario": "Tecnología y Redes del Sur S.A.S.",
+    "montoAcordado": 4860000,
+    "moneda": "COP",
+    "concepto": "Soporte de infraestructura de red",
+    "fecha": "2026-10-12"
+  }
+]

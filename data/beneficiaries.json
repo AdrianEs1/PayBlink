@@ -1,0 +1,79 @@
+[
+  {
+    "nombre": "Ferretería El Tornillo S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Andino",
+    "cuentaFicticia": "CO-4510-0001-8821"
+  },
+  {
+    "nombre": "Suministros Industriales del Norte Ltda",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio del Norte",
+    "cuentaFicticia": "CO-4510-0002-1190"
+  },
+  {
+    "nombre": "Transportes La Ruta Segura S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Andino",
+    "cuentaFicticia": "CO-4510-0003-7742"
+  },
+  {
+    "nombre": "Papelería y Oficina Central S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Central",
+    "cuentaFicticia": "CO-4510-0004-3320"
+  },
+  {
+    "nombre": "Servicios Eléctricos Andinos S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Andino",
+    "cuentaFicticia": "CO-4510-0005-6612"
+  },
+  {
+    "nombre": "Aseo Total Bogotá Ltda",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Bogotá",
+    "cuentaFicticia": "CO-4510-0006-9088"
+  },
+  {
+    "nombre": "Seguros del Pacífico S.A.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio del Pacífico",
+    "cuentaFicticia": "CO-4510-0007-4411"
+  },
+  {
+    "nombre": "Tecnología y Redes del Sur S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio del Sur",
+    "cuentaFicticia": "CO-4510-0008-2205"
+  },
+  {
+    "nombre": "Cafetería y Catering La Esquina",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Andino",
+    "cuentaFicticia": "CO-4510-0009-5534"
+  },
+  {
+    "nombre": "Mantenimiento Industrial Pro S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Industrial",
+    "cuentaFicticia": "CO-4510-0010-8877"
+  },
+  {
+    "nombre": "Consultores Fantasma S.A.S.",
+    "pais": "Colombia",
+    "monedaPreferida": "COP",
+    "bancoFicticio": "Banco Ficticio Andino",
+    "cuentaFicticia": "CO-9999-0000-0001"
+  }
+]

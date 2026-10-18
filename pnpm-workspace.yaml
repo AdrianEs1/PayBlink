@@ -1,0 +1,26 @@
+# Workspace para pnpm. El campo `workspaces` de package.json sigue ahí para npm:
+# ambos gestores usan la misma estructura de tres paquetes.
+packages:
+  - shared
+  - server
+  - web
+
+# pnpm bloquea por defecto los scripts de instalación de las dependencias.
+# Estos sí tienen que ejecutarse:
+#   - better-sqlite3: compila/descarga su binario nativo
+#   - esbuild:        descarga el binario que usan tsx y vite
+#   - @google/genai y protobufjs: preparan sus artefactos
+#
+# pnpm 12+ usa `allowBuilds` como mapa (nombre -> booleano); pnpm 10 usaba la
+# lista `onlyBuiltDependencies`. Se declaran los dos para cubrir ambas versiones.
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+  '@google/genai': true
+  protobufjs: true
+
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild
+  - '@google/genai'
+  - protobufjs

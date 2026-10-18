@@ -1,0 +1,37 @@
+{
+  "fechaReferencia": "2026-10-16",
+  "monedaBase": "COP",
+  "tasas": {
+    "COP": 1,
+    "USD": 4050,
+    "EUR": 4400
+  },
+  "limitePorPago": 15000000,
+  "limitePorPeriodo": 40000000,
+  "presupuestoPeriodo": 45000000,
+  "umbralAprobacionHumana": 12000000,
+  "confianzaMinima": 0.7,
+  "exigirContrato": false,
+  "beneficiariosPermitidos": [
+    "Ferretería El Tornillo S.A.S.",
+    "Suministros Industriales del Norte Ltda",
+    "Transportes La Ruta Segura S.A.S.",
+    "Papelería y Oficina Central S.A.S.",
+    "Servicios Eléctricos Andinos S.A.S.",
+    "Aseo Total Bogotá Ltda",
+    "Seguros del Pacífico S.A.",
+    "Tecnología y Redes del Sur S.A.S.",
+    "Cafetería y Catering La Esquina",
+    "Mantenimiento Industrial Pro S.A.S."
+  ],
+  "reglas": {
+    "R1": { "activa": true, "severidad": "bloquea" },
+    "R2": { "activa": true, "severidad": "escala" },
+    "R3": { "activa": true, "severidad": "escala" },
+    "R4": { "activa": true, "severidad": "escala" },
+    "R5": { "activa": true, "severidad": "escala" },
+    "R6": { "activa": true, "severidad": "escala" },
+    "R7": { "activa": true, "severidad": "escala" },
+    "R8": { "activa": true, "severidad": "escala" }
+  }
+}

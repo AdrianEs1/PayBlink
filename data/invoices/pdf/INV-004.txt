@@ -1,0 +1,12 @@
+FACTURA DE VENTA ELECTRONICA
+Servicios Eléctricos Andinos S.A.S.
+NIT 900.556.221-8
+
+Fecha de emision: 2026-10-10
+Beneficiario: Servicios Eléctricos Andinos S.A.S.
+Referencia: OC-2026-0454
+Monto: $ 13.500.000,00 COP
+Fecha de vencimiento: 2026-10-28
+Concepto: Mantenimiento eléctrico de bodega central
+
+Observaciones: trabajos ejecutados entre el 1 y el 8 de octubre.

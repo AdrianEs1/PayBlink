@@ -1,0 +1,42 @@
+{
+  "name": "blinka-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agente de pagos que paga, frena o escala facturas. El LLM propone, el codigo decide.",
+  "workspaces": [
+    "shared",
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,magenta \"tsx watch server/src/index.ts\" \"vite --config web/vite.config.ts\"",
+    "dev:server": "tsx watch server/src/index.ts",
+    "dev:web": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "preview": "vite preview --config web/vite.config.ts",
+    "start": "tsx server/src/index.ts",
+    "seed": "tsx server/src/storage/seed.ts",
+    "reset": "tsx scripts/reset-db.ts",
+    "turso:check": "tsx server/scripts/turso-check.ts",
+    "generate:invoices": "tsx scripts/generate-invoices.ts",
+    "agent": "tsx scripts/run-agent.ts",
+    "eval": "tsx eval/run.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "zod": "^3.24.1"
+  }
+}
