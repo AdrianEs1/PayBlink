@@ -44,7 +44,7 @@ export function RulesForm({
   const cambiar = (parcial: Partial<RulesConfig>) => setBorrador((previo) => ({ ...previo, ...parcial }));
 
   return (
-    <div className="panel">
+    <div className="panel panel-reglas">
       <h2>Reglas y límites</h2>
       <div className="aviso info">
         Los cambios se aplican a las próximas facturas que se procesen. Las decisiones ya registradas
@@ -147,64 +147,68 @@ export function RulesForm({
       </div>
 
       <h3>Reglas activas y severidad al incumplirse</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Regla</th>
-            <th>Activa</th>
-            <th>Al incumplirse</th>
-            <th>Qué verifica</th>
-          </tr>
-        </thead>
-        <tbody>
-          {RULE_IDS.map((id) => (
-            <tr key={id} style={{ cursor: 'default' }}>
-              <td className="mono">
-                {id} · {RULE_META[id].nombre}
-              </td>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={borrador.reglas[id]?.activa ?? true}
-                  onChange={(evento) =>
-                    cambiar({
-                      reglas: {
-                        ...borrador.reglas,
-                        [id]: {
-                          activa: evento.target.checked,
-                          severidad: borrador.reglas[id]?.severidad ?? 'escala',
-                        },
-                      } as RulesConfig['reglas'],
-                    })
-                  }
-                />
-              </td>
-              <td>
-                <select
-                  value={borrador.reglas[id]?.severidad ?? 'escala'}
-                  onChange={(evento) =>
-                    cambiar({
-                      reglas: {
-                        ...borrador.reglas,
-                        [id]: {
-                          activa: borrador.reglas[id]?.activa ?? true,
-                          severidad: evento.target.value === 'bloquea' ? 'bloquea' : 'escala',
-                        },
-                      } as RulesConfig['reglas'],
-                    })
-                  }
-                >
-                  <option value="escala">Escalar a una persona</option>
-                  <option value="bloquea">Frenar (bloquea)</option>
-                </select>
-              </td>
-              <td className="motivo">{RULE_META[id].descripcion}</td>
+      <div className="tabla-reglas-wrap">
+        <table className="tabla-reglas">
+          <thead>
+            <tr>
+              <th>Regla</th>
+              <th>Activa</th>
+              <th>Al incumplirse</th>
+              <th>Qué verifica</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {RULE_IDS.map((id) => (
+              <tr key={id} style={{ cursor: 'default' }}>
+                <td className="mono" data-etiqueta="Regla">
+                  {id} · {RULE_META[id].nombre}
+                </td>
+                <td data-etiqueta="Activa">
+                  <input
+                    type="checkbox"
+                    checked={borrador.reglas[id]?.activa ?? true}
+                    onChange={(evento) =>
+                      cambiar({
+                        reglas: {
+                          ...borrador.reglas,
+                          [id]: {
+                            activa: evento.target.checked,
+                            severidad: borrador.reglas[id]?.severidad ?? 'escala',
+                          },
+                        } as RulesConfig['reglas'],
+                      })
+                    }
+                  />
+                </td>
+                <td data-etiqueta="Al incumplirse">
+                  <select
+                    value={borrador.reglas[id]?.severidad ?? 'escala'}
+                    onChange={(evento) =>
+                      cambiar({
+                        reglas: {
+                          ...borrador.reglas,
+                          [id]: {
+                            activa: borrador.reglas[id]?.activa ?? true,
+                            severidad: evento.target.value === 'bloquea' ? 'bloquea' : 'escala',
+                          },
+                        } as RulesConfig['reglas'],
+                      })
+                    }
+                  >
+                    <option value="escala">Escalar a una persona</option>
+                    <option value="bloquea">Frenar (bloquea)</option>
+                  </select>
+                </td>
+                <td className="motivo" data-etiqueta="Qué verifica">
+                  {RULE_META[id].descripcion}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <div style={{ marginTop: 16 }}>
+      <div className="acciones-reglas">
         <button className="primario" disabled={trabajando} onClick={() => onGuardar(borrador)}>
           Guardar reglas
         </button>

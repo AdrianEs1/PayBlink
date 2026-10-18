@@ -281,7 +281,8 @@ pre.texto-factura {
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* `min(100%, …)` evita que la columna mínima desborde en móviles de 320 px. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 14px;
 }
 
@@ -1380,6 +1381,99 @@ pre.evento-detalle {
 
   .panel-sala {
     width: 250px;
+  }
+}
+
+/* Reglas: la tabla de cuatro columnas no cabe en pantallas estrechas ni en el
+   panel lateral de la sala. Se mide el panel (no la ventana) con una consulta
+   de contenedor para que cada regla pase a tarjeta también dentro del drawer. */
+.panel-reglas {
+  container-type: inline-size;
+}
+
+.tabla-reglas-wrap {
+  overflow-x: auto;
+}
+
+.acciones-reglas {
+  margin-top: 16px;
+}
+
+@container (max-width: 640px) {
+  .tabla-reglas thead {
+    display: none;
+  }
+
+  .tabla-reglas,
+  .tabla-reglas tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-reglas tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: var(--panel-2);
+    padding: 4px 12px 12px;
+    margin-bottom: 10px;
+  }
+
+  .tabla-reglas tr:hover {
+    background: var(--panel-2);
+  }
+
+  .tabla-reglas td {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+    padding: 7px 0;
+  }
+
+  /* Los dos controles comparten fila para que la tarjeta no se alargue. */
+  .tabla-reglas td[data-etiqueta='Activa'] {
+    grid-column: 1;
+  }
+
+  .tabla-reglas td[data-etiqueta='Al incumplirse'] {
+    grid-column: 2;
+  }
+
+  .tabla-reglas td::before {
+    content: attr(data-etiqueta);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+  }
+
+  .tabla-reglas td.motivo {
+    max-width: none;
+  }
+
+  .tabla-reglas select {
+    width: 100%;
+  }
+
+  .acciones-reglas button {
+    width: 100%;
+  }
+}
+
+/* Controles en una sola columna cuando el desplegable no cabe a lo ancho:
+   así no se recorta «Escalar a una persona» en teléfonos de 320–400 px. */
+@container (max-width: 460px) {
+  .tabla-reglas tr {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tabla-reglas td[data-etiqueta='Activa'],
+  .tabla-reglas td[data-etiqueta='Al incumplirse'] {
+    grid-column: 1 / -1;
   }
 }
 

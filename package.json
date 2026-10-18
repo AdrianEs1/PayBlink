@@ -22,6 +22,7 @@
     "seed": "tsx server/src/storage/seed.ts",
     "reset": "tsx scripts/reset-db.ts",
     "turso:check": "tsx server/scripts/turso-check.ts",
+    "gemini:check": "tsx server/scripts/check-gemini.ts",
     "generate:invoices": "tsx scripts/generate-invoices.ts",
     "agent": "tsx scripts/run-agent.ts",
     "eval": "tsx eval/run.ts",

@@ -55,6 +55,8 @@ export const SETTINGS = {
   port: Number(env('PORT', '3000')) || 3000,
   geminiApiKey: env('GEMINI_API_KEY'),
   geminiModel: env('GEMINI_MODEL', 'gemini-3.5-flash-lite'),
+  /** `true` si GEMINI_MODEL vino del entorno y no del valor por defecto. */
+  geminiModelFromEnv: env('GEMINI_MODEL') !== '',
   llmMode: (env('LLM_MODE', 'auto') || 'auto') as LlmMode,
   agentStrategy: (env('AGENT_STRATEGY', 'pipeline') || 'pipeline') as AgentStrategy,
   maxSteps: Number(env('MAX_STEPS', '6')) || 6,
@@ -68,6 +70,35 @@ export function effectiveLlmMode(): 'gemini' | 'fixture' | 'mock' | 'cache' {
   if (mode === 'auto') return SETTINGS.geminiApiKey ? 'gemini' : 'fixture';
   if (mode === 'gemini' && !SETTINGS.geminiApiKey) return 'fixture';
   return mode;
+}
+
+/**
+ * Huella de un secreto: primeras y ultimas letras, nunca el valor completo.
+ * Sirve para comparar la clave cargada con la de Google AI Studio.
+ */
+export function huellaSecreto(valor: string): string {
+  if (!valor) return 'ausente';
+  if (valor.length <= 8) return `presente (${valor.length} caracteres)`;
+  return `presente (${valor.slice(0, 4)}…${valor.slice(-4)}, ${valor.length} caracteres)`;
+}
+
+/** Datos del LLM para el log de arranque y `pnpm gemini:check`. */
+export function llmDiagnostico(): {
+  modoSolicitado: LlmMode;
+  modo: string;
+  modelo: string;
+  modeloOrigen: string;
+  apiKey: string;
+  apiKeyPresente: boolean;
+} {
+  return {
+    modoSolicitado: SETTINGS.llmMode,
+    modo: effectiveLlmMode(),
+    modelo: SETTINGS.geminiModel,
+    modeloOrigen: SETTINGS.geminiModelFromEnv ? 'desde .env / entorno' : 'valor por defecto del codigo',
+    apiKey: huellaSecreto(SETTINGS.geminiApiKey),
+    apiKeyPresente: SETTINGS.geminiApiKey.length > 0,
+  };
 }
 
 /** El motor de reglas nunca depende del LLM; esto solo se usa para el registro. */

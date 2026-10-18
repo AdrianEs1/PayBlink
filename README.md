@@ -81,6 +81,7 @@ pnpm start     # Express sirve la API y el build de React en :3000
 | `typecheck` | TypeScript estricto sobre `shared`, `server`, `eval`, `scripts` y `web`. |
 | `generate:invoices` | Regenera los PDF simulados a partir de sus fuentes de texto. |
 | `turso:check` | Comprueba conexión, esquema y filas de Turso contra el archivo local. |
+| `gemini:check` | Comprueba la clave y el modelo de Gemini con una llamada real y muestra la huella de la clave. |
 
 ## Cómo se decide
 
@@ -211,6 +212,18 @@ exige la evaluación reproducible (`pnpm eval` fuerza ese modo salvo `EVAL_LIVE=
 
 Con clave configurada, Gemini hace la extracción real con `responseSchema` y function calling;
 las respuestas se guardan en `eval/cache/` para que la demo no dependa de la red (CA-10).
+
+El arranque registra qué modelo y qué clave se aplicaron (nunca la clave completa):
+
+```text
+LLM: Gemini (gemini-3.5-flash-lite) · modo=gemini (LLM_MODE=auto)
+Modelo: gemini-3.5-flash-lite (desde .env / entorno)
+GEMINI_API_KEY: presente (AQ.A…lM9g, 53 caracteres)
+```
+
+Cada llamada al modelo añade una línea `[gemini] modelo=… operacion=… ok|error … ms tokens=…`, y
+`pnpm gemini:check` hace una llamada real mínima para confirmar qué modelo responde y diagnosticar
+clave inválida, modelo inexistente o cuota agotada.
 
 ## Réplica en la nube (Turso)
 

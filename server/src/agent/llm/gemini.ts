@@ -42,6 +42,60 @@ async function conTimeout<T>(promesa: Promise<T>, etiqueta: string, ms = TIMEOUT
   }
 }
 
+/** Resume el error en una linea: la API devuelve JSON largos que ensucian el log. */
+function resumenError(mensaje: string): string {
+  let texto = mensaje;
+  try {
+    const parsed = JSON.parse(mensaje) as { error?: { message?: string; status?: string } };
+    if (parsed?.error?.message) {
+      texto = parsed.error.status
+        ? `${parsed.error.status}: ${parsed.error.message}`
+        : parsed.error.message;
+    }
+  } catch {
+    /* ya viene en texto plano */
+  }
+  const linea = texto.replace(/\s+/g, ' ').trim();
+  return linea.length > 180 ? `${linea.slice(0, 177)}...` : linea;
+}
+
+/** Deja rastro del modelo real, la operacion y el resultado de cada llamada. */
+function registrarLlamada(
+  operacion: string,
+  ms: number,
+  resultado: { ok: boolean; tokens?: number; error?: string },
+): void {
+  const partes = [
+    '[gemini]',
+    `modelo=${SETTINGS.geminiModel}`,
+    `operacion=${operacion}`,
+    resultado.ok ? 'ok' : 'error',
+    `${ms} ms`,
+  ];
+  if (typeof resultado.tokens === 'number') partes.push(`tokens=${resultado.tokens}`);
+  if (resultado.error) partes.push(`detalle=${resumenError(resultado.error)}`);
+  console.log(partes.join(' '));
+}
+
+/**
+ * Envoltorio unico de `generateContent`: aplica el timeout y registra en el log
+ * que modelo respondio de verdad (el de la peticion, no el de la etiqueta).
+ */
+async function generar(operacion: string, ai: any, peticion: Record<string, unknown>): Promise<any> {
+  const inicio = Date.now();
+  try {
+    const respuesta = await conTimeout<any>(ai.models.generateContent(peticion), operacion);
+    registrarLlamada(operacion, Date.now() - inicio, {
+      ok: true,
+      tokens: respuesta?.usageMetadata?.totalTokenCount,
+    });
+    return respuesta;
+  } catch (error) {
+    registrarLlamada(operacion, Date.now() - inicio, { ok: false, error: mensajeDeError(error) });
+    throw error;
+  }
+}
+
 /** Esquema de la extraccion (RF-2.1: responseSchema + validacion Zod aguas abajo). */
 const EXTRACTION_SCHEMA = {
   type: 'OBJECT',
@@ -160,19 +214,16 @@ export function createGeminiClient(): LlmClient {
     async extract(invoice: InvoiceInput): Promise<ExtractResponse> {
       try {
         const ai = await crearCliente();
-        const respuesta = await conTimeout<any>(
-          ai.models.generateContent({
-            model: SETTINGS.geminiModel,
-            contents: buildExtractionPrompt(invoice),
-            config: {
-              systemInstruction: SYSTEM_EXTRACCION,
-              temperature: 0,
-              responseMimeType: 'application/json',
-              responseSchema: EXTRACTION_SCHEMA,
-            },
-          }),
-          'extraccion',
-        );
+        const respuesta = await generar('extraccion', ai, {
+          model: SETTINGS.geminiModel,
+          contents: buildExtractionPrompt(invoice),
+          config: {
+            systemInstruction: SYSTEM_EXTRACCION,
+            temperature: 0,
+            responseMimeType: 'application/json',
+            responseSchema: EXTRACTION_SCHEMA,
+          },
+        });
         const texto = textoDeRespuesta(respuesta);
         if (!texto) return { ok: false, error: 'Gemini devolvio una respuesta vacia.' };
         const json = parsearJson(texto);
@@ -186,19 +237,16 @@ export function createGeminiClient(): LlmClient {
     async propose(input: ProposalInput): Promise<ProposalResponse> {
       try {
         const ai = await crearCliente();
-        const respuesta = await conTimeout<any>(
-          ai.models.generateContent({
-            model: SETTINGS.geminiModel,
-            contents: buildDecisionPrompt(input.invoice, input.reglas),
-            config: {
-              systemInstruction: SYSTEM_DECISION,
-              temperature: 0,
-              responseMimeType: 'application/json',
-              responseSchema: PROPOSAL_SCHEMA,
-            },
-          }),
-          'propuesta',
-        );
+        const respuesta = await generar('propuesta', ai, {
+          model: SETTINGS.geminiModel,
+          contents: buildDecisionPrompt(input.invoice, input.reglas),
+          config: {
+            systemInstruction: SYSTEM_DECISION,
+            temperature: 0,
+            responseMimeType: 'application/json',
+            responseSchema: PROPOSAL_SCHEMA,
+          },
+        });
         const texto = textoDeRespuesta(respuesta);
         const json = texto ? parsearJson(texto) : null;
         const objeto = (json ?? {}) as { decision?: unknown; razones?: unknown };
@@ -219,14 +267,11 @@ export function createGeminiClient(): LlmClient {
     async explain(input: ExplainLlmInput): Promise<string | null> {
       try {
         const ai = await crearCliente();
-        const respuesta = await conTimeout<any>(
-          ai.models.generateContent({
-            model: SETTINGS.geminiModel,
-            contents: buildExplainPrompt(input.invoice, input.reglas, input.decisionFinal),
-            config: { systemInstruction: SYSTEM_EXPLICACION, temperature: 0.2 },
-          }),
-          'explicacion',
-        );
+        const respuesta = await generar('explicacion', ai, {
+          model: SETTINGS.geminiModel,
+          contents: buildExplainPrompt(input.invoice, input.reglas, input.decisionFinal),
+          config: { systemInstruction: SYSTEM_EXPLICACION, temperature: 0.2 },
+        });
         const texto = textoDeRespuesta(respuesta);
         return texto && texto.trim().length > 0 ? texto.trim() : null;
       } catch {
@@ -241,18 +286,15 @@ export function createGeminiClient(): LlmClient {
         const contents: any[] = [{ role: 'user', parts: [{ text: prompt }] }];
 
         for (let paso = 0; paso < maxSteps; paso += 1) {
-          const respuesta = await conTimeout<any>(
-            ai.models.generateContent({
-              model: SETTINGS.geminiModel,
-              contents,
-              config: {
-                systemInstruction: SYSTEM_DECISION,
-                temperature: 0,
-                tools: [{ functionDeclarations: TOOL_DECLARATIONS }],
-              },
-            }),
-            `loop paso ${paso + 1}`,
-          );
+          const respuesta = await generar(`loop paso ${paso + 1}`, ai, {
+            model: SETTINGS.geminiModel,
+            contents,
+            config: {
+              systemInstruction: SYSTEM_DECISION,
+              temperature: 0,
+              tools: [{ functionDeclarations: TOOL_DECLARATIONS }],
+            },
+          });
 
           const llamadas = llamadasDeRespuesta(respuesta);
           if (llamadas.length === 0) {
@@ -331,18 +373,15 @@ export function createGeminiClient(): LlmClient {
       let ultimoTexto = '';
 
       for (let paso = 0; paso < maxSteps; paso += 1) {
-        const respuesta = await conTimeout<any>(
-          ai.models.generateContent({
-            model: SETTINGS.geminiModel,
-            contents,
-            config: {
-              systemInstruction: SYSTEM_CHAT,
-              temperature: 0.2,
-              tools: [{ functionDeclarations: tools }],
-            },
-          }),
-          `chat paso ${paso + 1}`,
-        );
+        const respuesta = await generar(`chat paso ${paso + 1}`, ai, {
+          model: SETTINGS.geminiModel,
+          contents,
+          config: {
+            systemInstruction: SYSTEM_CHAT,
+            temperature: 0.2,
+            tools: [{ functionDeclarations: tools }],
+          },
+        });
 
         const llamadas = llamadasDeRespuesta(respuesta);
         if (llamadas.length === 0) {
@@ -365,14 +404,11 @@ export function createGeminiClient(): LlmClient {
 
         // Si ya hay una propuesta, no hace falta seguir consultando tools.
         if (propuestas.length > 0) {
-          const cierre = await conTimeout<any>(
-            ai.models.generateContent({
-              model: SETTINGS.geminiModel,
-              contents,
-              config: { systemInstruction: SYSTEM_CHAT, temperature: 0.2 },
-            }),
-            'chat cierre',
-          );
+          const cierre = await generar('chat cierre', ai, {
+            model: SETTINGS.geminiModel,
+            contents,
+            config: { systemInstruction: SYSTEM_CHAT, temperature: 0.2 },
+          });
           const texto = textoDeRespuesta(cierre);
           if (texto) ultimoTexto = texto;
           break;
@@ -393,14 +429,11 @@ export function createGeminiClient(): LlmClient {
     async responderChat(input: ChatContext): Promise<string> {
       try {
         const ai = await crearCliente();
-        const respuesta = await conTimeout<any>(
-          ai.models.generateContent({
-            model: SETTINGS.geminiModel,
-            contents: buildChatPrompt(input),
-            config: { systemInstruction: SYSTEM_CHAT, temperature: 0.7 },
-          }),
-          'chat',
-        );
+        const respuesta = await generar('chat', ai, {
+          model: SETTINGS.geminiModel,
+          contents: buildChatPrompt(input),
+          config: { systemInstruction: SYSTEM_CHAT, temperature: 0.7 },
+        });
         const texto = textoDeRespuesta(respuesta);
         return texto && texto.trim().length > 0 ? texto.trim() : 'No pude generar una respuesta. Intenta de nuevo.';
       } catch (error) {

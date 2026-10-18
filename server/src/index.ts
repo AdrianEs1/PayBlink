@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import cors from 'cors';
 import express, { type NextFunction, type Request, type Response } from 'express';
-import { PATHS, SETTINGS, llmModeLabel } from './config';
+import { PATHS, SETTINGS, llmDiagnostico, llmModeLabel } from './config';
 import { createApiRouter } from './api/routes';
 import { getDb } from './storage/db';
 import { iniciarTurso, programarSincronizacion } from './storage/turso';
@@ -67,7 +67,17 @@ startQueue();
 
 app.listen(SETTINGS.port, () => {
   console.log(`PayBlink escuchando en http://localhost:${SETTINGS.port}`);
-  console.log(`  LLM: ${llmModeLabel()}`);
+  const llm = llmDiagnostico();
+  const modo =
+    llm.modoSolicitado === llm.modo
+      ? `modo=${llm.modo}`
+      : `modo=${llm.modo} (LLM_MODE=${llm.modoSolicitado})`;
+  console.log(`  LLM: ${llmModeLabel()} · ${modo}`);
+  console.log(`  Modelo: ${llm.modelo} (${llm.modeloOrigen})`);
+  console.log(`  GEMINI_API_KEY: ${llm.apiKey}`);
+  if (!llm.apiKeyPresente && llm.modoSolicitado !== 'fixture' && llm.modoSolicitado !== 'mock') {
+    console.log('  Aviso: sin GEMINI_API_KEY; se usan fixtures locales (sin red).');
+  }
   console.log(`  Estrategia del agente: ${SETTINGS.agentStrategy} (MAX_STEPS=${SETTINGS.maxSteps})`);
   if (!existsSync(PATHS.webDist)) {
     console.log('  Aviso: web/dist no existe. Ejecuta `npm run build` para servir la interfaz.');
