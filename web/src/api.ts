@@ -18,7 +18,7 @@ import type {
   QueueItem,
   RulesConfig,
   Summary,
-} from '@blinka/shared';
+} from '@payblink/shared';
 
 export interface ConfigResponse {
   company: Company;

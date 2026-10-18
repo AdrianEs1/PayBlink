@@ -3,7 +3,7 @@
  * Toda fecha de referencia viene de la configuracion, nunca de `new Date()`,
  * para que la demo y la evaluacion sean reproducibles.
  */
-import type { PeriodoTipo } from '@blinka/shared';
+import type { PeriodoTipo } from '@payblink/shared';
 
 export function isValidIsoDate(value: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;

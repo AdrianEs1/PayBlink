@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DECISION_LABEL, RULE_META, type RuleResult } from '@blinka/shared';
+import { DECISION_LABEL, RULE_META, type RuleResult } from '@payblink/shared';
 import { buildDescription } from '../server/src/core/explain';
 
 function regla(id: RuleResult['id'], resultado: RuleResult['resultado'], motivo: string): RuleResult {

@@ -1,4 +1,4 @@
-import type { ChatProposalDraft, ChatProposalType } from '@blinka/shared';
+import type { ChatProposalDraft, ChatProposalType } from '@payblink/shared';
 import { formatMoney, round2 } from '../core/money';
 import { samePeriod } from '../core/period';
 import { normalizeKey, similarity } from '../core/text';

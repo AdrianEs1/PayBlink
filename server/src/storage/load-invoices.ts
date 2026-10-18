@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { basename, extname, join } from 'node:path';
-import type { InvoiceFormato } from '@blinka/shared';
+import type { InvoiceFormato } from '@payblink/shared';
 import { PATHS } from '../config';
 import type { InvoiceInput } from '../core/types';
 import { extractPdfText } from '../ingestion/pdf';

@@ -1,5 +1,5 @@
 {
-  "name": "@blinka/server",
+  "name": "@payblink/server",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "seed": "tsx src/storage/seed.ts"
   },
   "dependencies": {
-    "@blinka/shared": "workspace:*",
+    "@payblink/shared": "workspace:*",
     "@google/genai": "^1.0.0",
     "@libsql/client": "^0.18.0",
     "better-sqlite3": "^13.0.0",

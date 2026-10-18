@@ -10,7 +10,7 @@ import {
   type QueueState,
   type RulesConfig,
   type ToolCall,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { SETTINGS } from '../config';
 import { log as audit } from '../audit/audit';
 import { ensurePaymentOrder } from '../payments/orders';

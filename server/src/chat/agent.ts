@@ -1,4 +1,4 @@
-import type { ChatMessage, ChatProposalDraft } from '@blinka/shared';
+import type { ChatMessage, ChatProposalDraft } from '@payblink/shared';
 import { buildDeps } from '../agent/deps';
 import { decideHuman } from '../agent/orchestrator';
 import { log as audit } from '../audit/audit';

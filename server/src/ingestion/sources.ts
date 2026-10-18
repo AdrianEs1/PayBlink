@@ -1,4 +1,4 @@
-import type { ConnectorStatus, IngestEntry } from '@blinka/shared';
+import type { ConnectorStatus, IngestEntry } from '@payblink/shared';
 import type { InvoiceInput } from '../core/types';
 import { loadInvoicesFromDisk } from '../storage/load-invoices';
 import {

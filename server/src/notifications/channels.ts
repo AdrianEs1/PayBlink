@@ -1,4 +1,4 @@
-import type { NotificationChannel, NotificationContent } from '@blinka/shared';
+import type { NotificationChannel, NotificationContent } from '@payblink/shared';
 
 export interface OutgoingMessage {
   destinatario: string;

@@ -2,7 +2,7 @@
  * Aritmetica de dinero y parseo de formatos numericos ambiguos.
  * Codigo puro y determinista (RF-2.4, RF-3.3).
  */
-import type { Moneda } from '@blinka/shared';
+import type { Moneda } from '@payblink/shared';
 
 export interface ParsedAmount {
   /** Mejor lectura posible del numero, o null si no hay digitos. */

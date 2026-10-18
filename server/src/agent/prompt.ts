@@ -1,4 +1,4 @@
-import { RULE_META, type RuleResult } from '@blinka/shared';
+import { RULE_META, type RuleResult } from '@payblink/shared';
 import type { InvoiceInput } from '../core/types';
 import type { ChatContext } from './llm/types';
 

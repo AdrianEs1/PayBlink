@@ -1,4 +1,4 @@
-import type { Contract, LedgerEntry, Moneda, RulesConfig } from '@blinka/shared';
+import type { Contract, LedgerEntry, Moneda, RulesConfig } from '@payblink/shared';
 import { formatMoney, round2 } from '../core/money';
 import { normalizeKey, similarity } from '../core/text';
 import type { InvoiceInput, PriorDecision } from '../core/types';

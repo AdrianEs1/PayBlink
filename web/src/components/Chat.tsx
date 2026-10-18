@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ChatMessage, InvoiceListItem } from '@blinka/shared';
+import type { ChatMessage, InvoiceListItem } from '@payblink/shared';
 import { api } from '../api';
 
 const SUGERENCIAS = [
@@ -110,7 +110,7 @@ export function Chat({
         {mensajes.map((m) => (
           <div key={m.id} className={`mensaje ${m.rol === 'persona' ? 'persona' : m.rol}`}>
             <div className="mensaje-etiqueta">
-              {m.rol === 'persona' ? 'Tú' : m.rol === 'agente' ? 'Blinka Agent' : 'Sistema'}
+              {m.rol === 'persona' ? 'Tú' : m.rol === 'agente' ? 'PayBlink' : 'Sistema'}
             </div>
             <div className="mensaje-burbuja">{m.contenido}</div>
             {m.propuestas.map((p) => (

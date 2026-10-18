@@ -14,7 +14,7 @@ import {
   type QueueItem,
   type RulesConfig,
   type Summary as SummaryType,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { api, type AuditResponse, type ConfigResponse } from './api';
 import { Approvals } from './components/Approvals';
 import { Audit, type AuditFiltros } from './components/Audit';
@@ -470,7 +470,7 @@ export function App() {
       <div className="app">
         <header className="cabecera">
           <div>
-            <h1>Blinka Agent · agente de pagos</h1>              <div className="lema">
+            <h1>PayBlink · agente de pagos</h1>              <div className="lema">
                 El modelo propone, el código decide: nada se paga si alguna regla se escala o bloquea.
               </div>
           </div>
@@ -548,7 +548,7 @@ export function App() {
         <div className="marca-sala">
           <span className="estrella-sala" />
           <div>
-            <h1>Blinka Agent</h1>
+            <h1>PayBlink</h1>
             <span>sala de decisiones · el LLM propone, el código decide</span>
           </div>
         </div>

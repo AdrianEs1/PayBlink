@@ -1,4 +1,4 @@
-# Blinka Agent — agentes que pagan por la empresa
+# PayBlink — agentes que pagan por la empresa
 
 Agente que revisa las facturas y cuentas de cobro de una empresa ficticia y decide, para cada
 una, si **paga**, **frena** o **escala a una persona**. Cada decisión queda registrada, explicada
@@ -8,7 +8,7 @@ en lenguaje natural y con bitácora de auditoría.
 > La decisión final la fija código determinista y, ante cualquier duda o fallo, el resultado
 > es **escalar**.
 
-Reto Blinka — Hackatón 30X (Andrés Bilbao), Colombia.
+Construido para el Hackatón 30X (Andrés Bilbao), Colombia.
 
 ---
 
@@ -51,7 +51,7 @@ pnpm start     # Express sirve la API y el build de React en :3000
 | Variable | Por defecto | Para qué sirve |
 |---|---|---|
 | `GEMINI_API_KEY` | vacío | Clave de Google AI Studio. Si está vacía, el sistema corre en modo simulado. |
-| `GEMINI_MODEL` | `gemini-2.0-flash` | Modelo Flash vigente (confirmar el nombre en AI Studio). |
+| `GEMINI_MODEL` | `gemini-3.5-flash-lite` | Modelo Flash vigente (confirmar el nombre en AI Studio). |
 | `LLM_MODE` | `auto` | `auto` \| `gemini` \| `fixture` \| `mock` \| `cache`. |
 | `AGENT_STRATEGY` | `pipeline` | `pipeline` (plan B determinista) o `loop` (loop con tools). |
 | `MAX_STEPS` | `6` | Pasos máximos del loop por factura. Al agotarlos: escalar. |
@@ -59,7 +59,7 @@ pnpm start     # Express sirve la API y el build de React en :3000
 | `LLM_CACHE_DIR` | `eval/cache` | Cache de respuestas del LLM por factura. |
 | `QUEUE_BACKOFF_MS` | `500` | Espera base entre reintentos de la cola. |
 | `EVAL_LIVE` | — | `1` evalúa contra Gemini; sin ella `pnpm eval` corre con fixtures (CA-10). |
-| `BLINKA_DB_PATH` | `data/blinka.sqlite` | Permite aislar la base (los tests usan una temporal). |
+| `PAYBLINK_DB_PATH` | `data/payblink.sqlite` | Permite aislar la base (los tests usan una temporal). |
 | `TURSO_DATABASE_URL` | vacío | URL `libsql://…` de la base en Turso. Sin ella, la app solo usa SQLite local. |
 | `TURSO_AUTH_TOKEN` | vacío | Token de Turso para esa base (nunca se escribe en la nube ni en el repo). |
 | `TURSO_SYNC` | `1` | `0` apaga la réplica sin borrar las credenciales. |
@@ -176,7 +176,7 @@ Descripcion completa:   100%
 ## Estructura
 
 ```
-blinka-agent/
+payblink-agent/
 ├─ shared/        tipos y esquemas Zod (fuente de verdad de los datos)
 ├─ server/src/
 │  ├─ core/           reglas, guard, moneda, texto, periodos, explain  (código puro)
@@ -214,7 +214,7 @@ las respuestas se guardan en `eval/cache/` para que la demo no dependa de la red
 
 ## Réplica en la nube (Turso)
 
-La app sigue trabajando contra SQLite local (`data/blinka.sqlite`): las decisiones se leen y se
+La app sigue trabajando contra SQLite local (`data/payblink.sqlite`): las decisiones se leen y se
 escriben sin red, y ningún test depende de Internet. Con `TURSO_DATABASE_URL` y
 `TURSO_AUTH_TOKEN` definidas, además se mantiene una **réplica en la nube**:
 
@@ -245,6 +245,6 @@ no abre cuentas ni verifica identidades. Las notificaciones a aprobadores son si
 conectores de vista previa no establecen ninguna conexión. Trabaja únicamente con datos ficticios.
 No incluye decisiones de cumplimiento ni detección de fraude.
 
-Los `tests/security.test.ts` reinician la base local (`data/blinka.sqlite`), igual que
+Los `tests/security.test.ts` reinician la base local (`data/payblink.sqlite`), igual que
 `pnpm reset`: si tienes la demo abierta con decisiones cargadas, vuelve a ejecutar
 `pnpm seed` o pulsa **Reiniciar demo**.

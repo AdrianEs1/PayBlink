@@ -1,4 +1,4 @@
-import { ContractSchema, CompanySchema, RulesConfigSchema } from '@blinka/shared';
+import { ContractSchema, CompanySchema, RulesConfigSchema } from '@payblink/shared';
 import { z } from 'zod';
 import { PATHS, readJson } from '../config';
 import { dropDbFile, getDb } from './db';

@@ -1,4 +1,4 @@
-import { CAMPOS_OBLIGATORIOS } from '@blinka/shared';
+import { CAMPOS_OBLIGATORIOS } from '@payblink/shared';
 import { daysBetween, isValidIsoDate } from '../period';
 import type { Rule } from '../types';
 

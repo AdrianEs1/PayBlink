@@ -1,4 +1,4 @@
-import type { ExtractionCheck, InvoiceExtraction } from '@blinka/shared';
+import type { ExtractionCheck, InvoiceExtraction } from '@payblink/shared';
 import type { InvoiceInput } from '../core/types';
 import type { LlmClient } from '../agent/llm/types';
 import { normalizeExtraction } from './normalize';

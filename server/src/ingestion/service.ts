@@ -5,7 +5,7 @@ import {
   type IngestExample,
   type IngestResult,
   type SourceInfo,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { z } from 'zod';
 import { log as audit } from '../audit/audit';
 import { PATHS, readJson } from '../config';

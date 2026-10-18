@@ -12,7 +12,7 @@ import type {
   LedgerEntry,
   RuleOutcome,
   RulesConfig,
-} from '@blinka/shared';
+} from '@payblink/shared';
 
 /** Factura cruda tal como entra al motor. */
 export interface InvoiceInput {

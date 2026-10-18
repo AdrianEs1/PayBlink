@@ -66,7 +66,7 @@ await ensureSeeded();
 startQueue();
 
 app.listen(SETTINGS.port, () => {
-  console.log(`Blinka Agent escuchando en http://localhost:${SETTINGS.port}`);
+  console.log(`PayBlink escuchando en http://localhost:${SETTINGS.port}`);
   console.log(`  LLM: ${llmModeLabel()}`);
   console.log(`  Estrategia del agente: ${SETTINGS.agentStrategy} (MAX_STEPS=${SETTINGS.maxSteps})`);
   if (!existsSync(PATHS.webDist)) {

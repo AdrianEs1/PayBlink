@@ -6,7 +6,7 @@ import {
   QUEUE_STATE_LABEL,
   RULE_META,
   type InvoiceDetail as InvoiceDetailType,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { api } from '../api';
 import { formatearMonto } from './InvoicesTable';
 

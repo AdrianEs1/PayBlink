@@ -24,3 +24,6 @@ eval/cache/
 .DS_Store
 Thumbs.db
 *.log
+
+# Restos de SQLite en WAL (se regeneran solos)
+*.sqlite-*

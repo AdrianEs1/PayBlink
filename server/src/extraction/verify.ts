@@ -1,4 +1,4 @@
-import type { ExtractionCheck, InvoiceExtraction } from '@blinka/shared';
+import type { ExtractionCheck, InvoiceExtraction } from '@payblink/shared';
 import { findAmountInText, formatMoney } from '../core/money';
 import { beneficiaryAppearsInText, detectPromptInjection } from '../core/text';
 

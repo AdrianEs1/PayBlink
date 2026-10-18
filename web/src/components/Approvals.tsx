@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { DecisionRecord } from '@blinka/shared';
+import type { DecisionRecord } from '@payblink/shared';
 import { formatearMonto } from './InvoicesTable';
 
 export function Approvals({

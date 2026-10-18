@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MONEDAS, RULE_IDS, RULE_META, type Moneda, type RulesConfig } from '@blinka/shared';
+import { MONEDAS, RULE_IDS, RULE_META, type Moneda, type RulesConfig } from '@payblink/shared';
 import type { ConfigResponse } from '../api';
 
 function Numero({

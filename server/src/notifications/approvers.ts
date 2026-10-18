@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ApproverSchema, type Approver } from '@blinka/shared';
+import { ApproverSchema, type Approver } from '@payblink/shared';
 import { PATHS, readJson } from '../config';
 
 let cache: Approver[] | null = null;

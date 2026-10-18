@@ -8,7 +8,7 @@ import type {
   RulesConfig,
   Contract,
   ChatProposalDraft,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import type { InvoiceInput } from '../../core/types';
 import type { ToolContext } from '../tools';
 

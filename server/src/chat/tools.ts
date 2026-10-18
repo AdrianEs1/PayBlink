@@ -4,7 +4,7 @@ import {
   type Company,
   type Contract,
   type RulesConfig,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import type { ChatToolDeclaration, ChatToolResult } from '../agent/llm/types';
 import { formatMoney, round2 } from '../core/money';
 import { samePeriod } from '../core/period';

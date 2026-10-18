@@ -1,4 +1,4 @@
-import type { EvaluationReport, Summary as SummaryType } from '@blinka/shared';
+import type { EvaluationReport, Summary as SummaryType } from '@payblink/shared';
 
 function porcentaje(valor: number): string {
   return `${valor.toFixed(1)}%`;

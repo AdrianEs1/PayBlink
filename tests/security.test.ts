@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { DecisionSchema, type Decision } from '@blinka/shared';
+import { DecisionSchema, type Decision } from '@payblink/shared';
 import { z } from 'zod';
 import { PATHS, readJson } from '../server/src/config';
 import { createFixtureClient } from '../server/src/agent/llm/fixtures';

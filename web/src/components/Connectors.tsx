@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Connector } from '@blinka/shared';
+import type { Connector } from '@payblink/shared';
 
 export function Connectors({ items }: { items: Connector[] }) {
   const [seleccionado, setSeleccionado] = useState<string | null>(items[0]?.id ?? null);

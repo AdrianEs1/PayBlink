@@ -1,4 +1,4 @@
-import type { RuleId } from '@blinka/shared';
+import type { RuleId } from '@payblink/shared';
 import type { Rule } from '../types';
 import { r1Duplicado } from './r1-duplicado';
 import { r2BeneficiarioPermitido } from './r2-beneficiario';

@@ -5,7 +5,7 @@ import {
   type AuditEvent,
   type AuditEventType,
   type AuditFilters,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { getDb } from '../storage/db';
 
 /**

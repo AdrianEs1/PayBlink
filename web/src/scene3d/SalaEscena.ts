@@ -1,4 +1,4 @@
-import type { QueueState } from '@blinka/shared';
+import type { QueueState } from '@payblink/shared';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { SalaDatos, SalaId } from './tipos';

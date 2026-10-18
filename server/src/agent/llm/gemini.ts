@@ -1,4 +1,4 @@
-import type { ChatProposalDraft, Decision, ToolCall, Company, RulesConfig, Contract } from '@blinka/shared';
+import type { ChatProposalDraft, Decision, ToolCall, Company, RulesConfig, Contract } from '@payblink/shared';
 import { SETTINGS } from '../../config';
 import type { InvoiceInput } from '../../core/types';
 import {

@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { DecisionRecord, PaymentOrder, RulesConfig } from '@blinka/shared';
+import type { DecisionRecord, PaymentOrder, RulesConfig } from '@payblink/shared';
 import { log as audit } from '../audit/audit';
 import { convertToBase } from '../core/money';
 import * as repo from '../storage/repositories';

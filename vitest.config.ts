@@ -8,7 +8,7 @@ const sharedEntry = fileURLToPath(new URL('./shared/src/index.ts', import.meta.u
 export default defineConfig({
   resolve: {
     alias: {
-      '@blinka/shared': sharedEntry,
+      '@payblink/shared': sharedEntry,
     },
   },
   test: {
@@ -22,7 +22,7 @@ export default defineConfig({
     // sin pelear por el archivo que el servidor mantiene abierto.
     // RNF-4 / CA-10: los tests nunca llaman a la API real.
     env: {
-      BLINKA_DB_PATH: resolve(tmpdir(), 'blinka-test.sqlite'),
+      PAYBLINK_DB_PATH: resolve(tmpdir(), 'payblink-test.sqlite'),
       LLM_MODE: 'fixture',
       GEMINI_API_KEY: '',
       // Los tests nunca tocan la réplica de Turso.

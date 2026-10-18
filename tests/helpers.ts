@@ -1,4 +1,4 @@
-import { ContractSchema, RulesConfigSchema, type RulesConfig } from '@blinka/shared';
+import { ContractSchema, RulesConfigSchema, type RulesConfig } from '@payblink/shared';
 import { z } from 'zod';
 import { PATHS, readJson } from '../server/src/config';
 import type { InvoiceInput, PriorDecision, RuleContext } from '../server/src/core/types';

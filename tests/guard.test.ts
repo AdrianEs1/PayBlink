@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { mostRestrictive, mostRestrictiveOf, RULE_META } from '@blinka/shared';
+import { mostRestrictive, mostRestrictiveOf, RULE_META } from '@payblink/shared';
 import { applyGuard } from '../server/src/core/guard';
 import { evaluateRules } from '../server/src/core/engine';
 import { contexto } from './helpers';
-import type { RuleResult } from '@blinka/shared';
+import type { RuleResult } from '@payblink/shared';
 
 function regla(id: RuleResult['id'], resultado: RuleResult['resultado']): RuleResult {
   return {

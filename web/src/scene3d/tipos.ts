@@ -1,4 +1,4 @@
-import type { InvoiceListItem, Summary } from '@blinka/shared';
+import type { InvoiceListItem, Summary } from '@payblink/shared';
 
 /** Las ocho pantallas existentes, ahora estaciones de la sala 3D. */
 export type SalaId =

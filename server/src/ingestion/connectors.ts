@@ -1,4 +1,4 @@
-import type { Connector } from '@blinka/shared';
+import type { Connector } from '@payblink/shared';
 
 /**
  * RF-11: catalogo de fuentes de facturas.

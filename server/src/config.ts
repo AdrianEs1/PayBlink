@@ -32,9 +32,9 @@ export const PATHS = {
   rules: resolve(ROOT, 'data', 'rules.json'),
   contracts: resolve(ROOT, 'data', 'contracts.json'),
   fixtures: resolve(ROOT, 'data', 'llm-fixtures.json'),
-  // BLINKA_DB_PATH permite aislar la base (los tests usan una propia para no
+  // PAYBLINK_DB_PATH permite aislar la base (los tests usan una propia para no
   // chocar con el servidor de desarrollo, que mantiene el archivo abierto).
-  db: resolve(ROOT, env('BLINKA_DB_PATH', 'data/blinka.sqlite')),
+  db: resolve(ROOT, env('PAYBLINK_DB_PATH', 'data/payblink.sqlite')),
   webDist: resolve(ROOT, 'web', 'dist'),
   expected: resolve(ROOT, 'eval', 'expected.json'),
 };

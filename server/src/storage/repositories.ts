@@ -29,7 +29,7 @@ import {
   type QueueState,
   type RulesConfig,
   type SourceInfo,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { z } from 'zod';
 import type { InvoiceInput, PriorDecision } from '../core/types';
 import { getDb } from './db';

@@ -1,4 +1,4 @@
-import { QUEUE_STATE_LABEL, type QueueItem } from '@blinka/shared';
+import { QUEUE_STATE_LABEL, type QueueItem } from '@payblink/shared';
 import { buildDeps } from '../agent/deps';
 import {
   processInvoice,

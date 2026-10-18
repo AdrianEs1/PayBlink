@@ -3,7 +3,7 @@ import {
   AUDIT_EVENT_LABEL,
   AUDIT_EVENT_TYPES,
   type AuditEvent,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { api } from '../api';
 
 export interface AuditFiltros {

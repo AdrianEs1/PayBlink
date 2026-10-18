@@ -1,4 +1,4 @@
-import { MONEDAS, type InvoiceExtraction, type Moneda } from '@blinka/shared';
+import { MONEDAS, type InvoiceExtraction, type Moneda } from '@payblink/shared';
 import { parseAmount } from '../core/money';
 import { isValidIsoDate } from '../core/period';
 

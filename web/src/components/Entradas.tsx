@@ -5,7 +5,7 @@ import {
   type IngestExample,
   type IngestMode,
   type QueueItem,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { api, type IngestPreview } from '../api';
 
 function leerArchivoComoBase64(archivo: File): Promise<string> {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { InvoiceExtraction, LedgerEntry } from '@blinka/shared';
+import type { InvoiceExtraction, LedgerEntry } from '@payblink/shared';
 import { evaluateRules } from '../server/src/core/engine';
 import { RULES } from '../server/src/core/rules';
 import { contexto, previo } from './helpers';

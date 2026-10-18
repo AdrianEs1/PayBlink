@@ -15,7 +15,7 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@blinka/shared": ["../shared/src/index.ts"]
+      "@payblink/shared": ["../shared/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]

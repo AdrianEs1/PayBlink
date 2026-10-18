@@ -3,7 +3,7 @@
  *   npm run agent            -> procesa las pendientes
  *   npm run agent -- --reset -> reinicia la base y procesa todo el set
  */
-import { ESTADO_LABEL } from '@blinka/shared';
+import { ESTADO_LABEL } from '@payblink/shared';
 import { llmModeLabel } from '../server/src/config';
 import { processPending, type OrchestratorDeps } from '../server/src/agent/orchestrator';
 import { createLlmClient } from '../server/src/agent/llm';

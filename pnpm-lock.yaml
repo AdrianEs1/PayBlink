@@ -35,15 +35,15 @@ importers:
 
   server:
     dependencies:
-      '@blinka/shared':
-        specifier: workspace:*
-        version: link:../shared
       '@google/genai':
         specifier: ^1.0.0
         version: 1.52.0(supports-color@8.1.1)
       '@libsql/client':
         specifier: ^0.18.0
         version: 0.18.0
+      '@payblink/shared':
+        specifier: workspace:*
+        version: link:../shared
       better-sqlite3:
         specifier: ^13.0.0
         version: 13.0.3
@@ -84,7 +84,7 @@ importers:
 
   web:
     dependencies:
-      '@blinka/shared':
+      '@payblink/shared':
         specifier: workspace:*
         version: link:../shared
       react:

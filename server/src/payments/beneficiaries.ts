@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { BeneficiarySchema, type Beneficiary } from '@blinka/shared';
+import { BeneficiarySchema, type Beneficiary } from '@payblink/shared';
 import { PATHS, readJson } from '../config';
 
 /** RF-14.1: ficha ficticia del beneficiario. No contiene datos reales. */

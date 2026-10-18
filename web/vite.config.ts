@@ -7,12 +7,12 @@ const sharedEntry = fileURLToPath(new URL('../shared/src/index.ts', import.meta.
 
 export default defineConfig({
   // Fijado de forma explicita: `vite build --config web/vite.config.ts` desde la raiz
-  // produce exactamente lo mismo que `pnpm --filter @blinka/web build` desde `web/`.
+  // produce exactamente lo mismo que `pnpm --filter @payblink/web build` desde `web/`.
   root: webRoot,
   plugins: [react()],
   resolve: {
     alias: {
-      '@blinka/shared': sharedEntry,
+      '@payblink/shared': sharedEntry,
     },
   },
   server: {

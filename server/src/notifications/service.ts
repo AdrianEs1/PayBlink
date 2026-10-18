@@ -5,7 +5,7 @@ import type {
   NotificationContent,
   NotificationResponse,
   RulesConfig,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { log as audit } from '../audit/audit';
 import { formatMoney, convertToBase } from '../core/money';
 import { etiquetaRegla } from '../core/explain';

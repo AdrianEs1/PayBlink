@@ -4,7 +4,7 @@ import {
   type Decision,
   type RuleOutcome,
   type RuleResult,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { RULES } from './rules';
 import type { RuleContext } from './types';
 

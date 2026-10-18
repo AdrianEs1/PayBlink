@@ -9,7 +9,7 @@ import {
   type DecisionRecord,
   type InvoiceListItem,
   type QueueState,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { PATHS, SETTINGS, llmModeLabel } from '../config';
 import { convertToBase, round2 } from '../core/money';
 import {
@@ -236,7 +236,7 @@ export function createApiRouter(): Router {
       detalle: { formato: 'csv', recurso: 'facturas', filas: decisiones.length },
     });
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-    res.setHeader('Content-Disposition', 'attachment; filename="blinka-facturas.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="payblink-facturas.csv"');
     res.send(`${lineas.join('\n')}\n`);
   });
 
@@ -488,7 +488,7 @@ export function createApiRouter(): Router {
     const contenido = exportEventsCsv(filtros);
     audit({ actor: 'sistema', tipo: 'exportacion', detalle: { formato: 'csv', recurso: 'auditoria', filtros } });
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-    res.setHeader('Content-Disposition', 'attachment; filename="blinka-auditoria.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="payblink-auditoria.csv"');
     res.send(contenido);
   });
 
@@ -497,7 +497,7 @@ export function createApiRouter(): Router {
     const contenido = exportEventsJson(filtros);
     audit({ actor: 'sistema', tipo: 'exportacion', detalle: { formato: 'json', recurso: 'auditoria', filtros } });
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.setHeader('Content-Disposition', 'attachment; filename="blinka-auditoria.json"');
+    res.setHeader('Content-Disposition', 'attachment; filename="payblink-auditoria.json"');
     res.send(contenido);
   });
 

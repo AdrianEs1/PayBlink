@@ -5,7 +5,7 @@ import {
   type ExtractionCheck,
   type Moneda,
   type RuleResult,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { formatMoney } from './money';
 
 /**

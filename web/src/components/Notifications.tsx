@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { ChatMessage, Notification } from '@blinka/shared';
+import type { ChatMessage, Notification } from '@payblink/shared';
 import { api } from '../api';
 import { formatearMonto } from './InvoicesTable';
 

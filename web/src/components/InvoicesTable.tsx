@@ -2,7 +2,7 @@ import {
   ESTADO_LABEL,
   QUEUE_STATE_LABEL,
   type InvoiceListItem,
-} from '@blinka/shared';
+} from '@payblink/shared';
 
 export function formatearMonto(monto: number | null, moneda: string | null): string {
   if (monto === null || !moneda) return '—';

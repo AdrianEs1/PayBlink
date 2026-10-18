@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from 'node:crypto';
 import { basename, extname } from 'node:path';
-import type { IngestEntry, InvoiceFormato, SourceInfo as SourceInfoType } from '@blinka/shared';
+import type { IngestEntry, InvoiceFormato, SourceInfo as SourceInfoType } from '@payblink/shared';
 import type { InvoiceInput } from '../core/types';
 import { extractPdfText } from './pdf';
 

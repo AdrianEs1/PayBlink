@@ -1,4 +1,4 @@
-import { mostRestrictive, type Decision, type RuleResult } from '@blinka/shared';
+import { mostRestrictive, type Decision, type RuleResult } from '@payblink/shared';
 import { engineVerdict, motivosRelevantes } from './engine';
 
 /**

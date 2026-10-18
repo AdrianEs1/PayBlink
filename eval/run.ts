@@ -15,7 +15,7 @@ import {
   DecisionSchema,
   type Decision,
   type EvaluationReport,
-} from '@blinka/shared';
+} from '@payblink/shared';
 import { PATHS, ROOT, llmModeLabel, readJson } from '../server/src/config';
 import { processInvoice, type OrchestratorDeps } from '../server/src/agent/orchestrator';
 import { createLlmClient } from '../server/src/agent/llm';

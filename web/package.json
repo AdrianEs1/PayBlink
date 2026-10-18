@@ -1,5 +1,5 @@
 {
-  "name": "@blinka/web",
+  "name": "@payblink/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
-    "@blinka/shared": "workspace:*",
+    "@payblink/shared": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "three": "^0.186.1"
